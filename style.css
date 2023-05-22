@@ -71,3 +71,11 @@ input {
 .toggle_menu:hover{
     cursor: pointer !important;
 }
+
+.nav-item{
+    font-size: 17px !important;
+}
+
+.username{
+    width: 200px !important;
+}

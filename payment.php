@@ -1,3 +1,13 @@
+<?php
+include 'auth.php';
+?>
+<?php 
+include 'conn.php';
+        // $sql="select * from `teacher` where Teach_id='$_GET[Teach_id]'";
+        $rs=mysqli_query($conn, "SELECT * FROM `teacher` where Teach_id='$_GET[Teach_id]'");
+          $row = mysqli_fetch_array($rs)
+            
+            ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,6 +41,8 @@
         <link rel="stylesheet" href="css/owl.carousel.min.css">
         <link rel="stylesheet" href="css/owl.theme.default.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -185,6 +197,42 @@ body {
     </style>
     </head>
 <body>
+<div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light z-1" id="nav">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="./images/logo.jpg" style=" border-radius: 50%;" alt="" class="w-50"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse search navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav nave-link ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item ">
+                          <a class="nav-link m" aria-current="page" href="Teachers_Home.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="about.php">About</a>
+                  </li>
+                  <li class="nav-item"><?php if (isset($_SESSION['Name']) && $_SESSION['Name']): ?>
+                    <a class="nav-link" aria-current="page" href="./exame/index.html">Exams</a>
+                  </li>
+                  <?php else: ?>
+            <li class="nav-item">
+              </li>
+              <?php endif; ?>
+                </ul>
+            </div>
+            <input class="form-control " id="search" name="search"  placeholder="Search" >
+            <li class="nav-item username ms-5"><?php if (isset($_SESSION['Name']) && $_SESSION['Name']): ?>
+                                        <a href="profile.php" class="nav-link username"><?php echo($_SESSION['Name']); ?></a>
+                                    </li>
+                                 <?php else: ?>
+            <li class="nav-item">
+                <a class="nav-link fa-solid fa-user me-2" aria-current="page" href="signin__page.php">login</a>
+              </li>
+              <?php endif; ?>
+            </div>
+          </nav>
+      </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mb-lg-0 mb-3">
@@ -197,7 +245,7 @@ body {
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <small><span class="fw-bold">Expiry date:</span><span>10/16</span></small>
-                        <small><span class="fw-bold">Name:</span><span>Kumar</span></small>
+                        <small><span class="fw-bold">Name:</span><span><?php echo $_SESSION['Name']; ?></span></small>
                     </div>
                 </div>
             </div>
@@ -212,7 +260,7 @@ body {
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <small><span class="fw-bold">Expiry date:</span><span>10/16</span></small>
-                        <small><span class="fw-bold">Name:</span><span>Kumar</span></small>
+                        <small><span class="fw-bold">Name: </span><span><?php echo $_SESSION['Name']; ?></span></small>
                     </div>
                 </div>
             </div>
@@ -227,7 +275,7 @@ body {
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <small><span class="fw-bold">Expiry date:</span><span>10/16</span></small>
-                        <small><span class="fw-bold">Name:</span><span>Kumar</span></small>
+                        <small><span class="fw-bold">Name:</span><span><?php echo $_SESSION['Name']; ?></span></small>
                     </div>
                 </div>
             </div>
@@ -283,12 +331,11 @@ body {
                             <div class="row">
                                 <div class="col-lg-5 mb-lg-0 mb-3">
                                     <p class="h4 mb-0">Summary</p>
-                                    <p class="mb-0"><span class="fw-bold">Product:</span><span class="c-green">: Name of
-                                            product</span>
+                                    <p class="mb-0"><span class="fw-bold">Teacher:</span><span class="c-green">: <?php echo $row['Name']; ?></span>
                                     </p>
                                     <p class="mb-0">
                                         <span class="fw-bold">Price:</span>
-                                        <span class="c-green">:$452.90</span>
+                                        <span class="c-green">: <?php echo $row['price']; ?></span>
                                     </p>
                                     <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque
                                         nihil neque
@@ -298,36 +345,42 @@ body {
                                         iste harum ipsum hic, nemo qui!</p>
                                 </div>
                                 <div class="col-lg-7">
-                                    <form action="" class="form">
+                                    <form action="pay-action.php" method="POST">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form__div">
-                                                    <input type="text" class="form-control" placeholder=" ">
+                                                    <input name="card_num" type="text" class="form-control" placeholder=" " required>
                                                     <label for="" class="form__label">Card Number</label>
                                                 </div>
                                             </div>
-
-                                            <div class="col-6">
+                                            <div class="col-12">
                                                 <div class="form__div">
-                                                    <input type="text" class="form-control" placeholder=" ">
-                                                    <label for="" class="form__label">MM / yy</label>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-6">
-                                                <div class="form__div">
-                                                    <input type="password" class="form-control" placeholder=" ">
-                                                    <label for="" class="form__label">cvv code</label>
+                                                    <!-- <input type="text" name="name_card" class="form-control" placeholder=" "> -->
+                                                    <!-- <label for=""  class="form__label">dsad</label> -->
+                                                    <select name="name_card" required class="form-control">
+                                                    <option name="name_card">Card Type</option>    
+                                                    <option name="name_card">Visa</option>
+                                                    <option name="name_card">Mastercard</option>
+                                                    <option name="name_card">Discover</option>
+                                                    <option name="name_card">PayPal</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form__div">
-                                                    <input type="text" class="form-control" placeholder=" ">
-                                                    <label for="" class="form__label">name on the card</label>
+                                                    <input type="text" name="teacher_name" class="form-control" required  placeholder="" value="<?php echo $row['Name']; ?>">
+                                                    <label for="" class="form__label" >Teacher name</label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-12">
+                                                <div class="form__div">
+                                                    <input name="student_name" type="text" class="form-control" required placeholder="" value="<?php echo $_SESSION['Name'];?>">
+                                                    <label for="" class="form__label">Student name</label>
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <div class="btn btn-primary w-100">Sumbit</div>
+                                                <button class="btn btn-primary w-100" type="submit">Buy</button>
                                             </div>
                                         </div>
                                     </form>
@@ -337,10 +390,6 @@ body {
                     </div>
                 </div>
             </div>
-            <div class="col-12">
-                <div class="btn btn-primary payment">
-                    Make Payment
-                </div>
             </div>
         </div>
     </div>

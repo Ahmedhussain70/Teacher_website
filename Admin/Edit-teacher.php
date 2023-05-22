@@ -8,6 +8,7 @@ if(mysqli_num_rows($result)>0){
         $name=$row['Name'];
         $phone=$row['Phone'];
         $Spaecialization=$row['Spaecialization'];
+        $price=$row['price'];
         $email=$row['email'];
     }
 }
@@ -48,6 +49,10 @@ if(mysqli_num_rows($result)>0){
   <div class="mb-3">
     <label for="in3" class="form-label">Spaecialization</label>
     <input type="text" class="form-control" id="in2" name="Spaecialization" value="<?php echo $Spaecialization;?>">
+  </div>
+  <div class="mb-3">
+    <label for="in4" class="form-label">Price</label>
+    <input type="text" class="form-control" id="in4" name="price" value="<?php echo $price;?>">
   </div>
   <div class="mb-3">
     <label for="in4" class="form-label">Email</label>

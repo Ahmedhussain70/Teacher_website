@@ -34,9 +34,6 @@
               <h1 class="d-flex justify-content-center text-xl text-white">control panal</h1> -->
               </ul>
                 <ul class="nav flex-column d-flex h-screen" style="margin-top: 90px;">
-                <li>
-                        <a class="nav-link btn-nav fa-solid fa-chart-line d-flex align-items-center text-white" aria-current="page" href="Dashboard.php"><span class="ms-1 font-normal font-sans text-base">Dashboard</span></a>
-                    </li>
                     <li>
                         <a class="nav-link btn-nav fa-solid fa-graduation-cap d-flex align-items-center text-white" aria-current="page" href="users.php"><span class="ms-1 font-normal font-sans text-base">Students</span></a>
                     </li>
@@ -45,9 +42,6 @@
                     </li>
                     <li>
                         <a class="btn-nav fa-solid fa-book nav-link d-flex align-items-center text-white active" aria-current="page" href="corses.php"><span class="ms-1 font-normal font-sans text-base">Courses</span></a>
-                    </li>
-                    <li>
-                        <a class="btn-nav fa-solid fa-file-circle-plus nav-link d-flex align-items-center text-white" aria-current="page" href="Bookings.php"><span class="ms-1 font-normal font-sans text-base">Bookings</span></a>
                     </li>
                     <!-- <li>
                         <a class="btn-nav fa-solid fa-gear nav-link d-flex align-items-center text-white" href="Settings.php"><span class="ms-1 font-normal font-sans text-base">Settings</span></a>
@@ -86,9 +80,6 @@
                         <!-- <li class="mb-5 mt-5">
                             <a class="btn-nav-res fa-solid fa-gear text-white" style="font-size: 25px !important; margin-top: 30px" href="Settings.php"><span class="ms-1 font-normal font-sans text-base"  style="font-size: 25px !important;">Settings</span></a>
                         </li> -->
-                        <li class="mt-5">
-                            <a class="btn-nav fa-solid fa-file-circle-plus nav-link d-flex align-items-center text-white" style="font-size: 25px !important; margin-top: 30px" aria-current="page" href="Bookings.php"><span class="ms-1 font-normal font-sans text-base" style="font-size: 25px !important;">Bookings</span></a>
-                        </li>
                         <li class="mt-4">
                             <a class="btn-nav-res fa-solid fa-arrow-right-from-bracket text-white" style="font-size: 25px !important; margin-top: 30px" href="logout.php"><span class="ms-1 font-normal font-sans text-base"  style="font-size: 25px !important;">Logout</span></a>
                         </li>

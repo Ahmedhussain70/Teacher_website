@@ -1,3 +1,19 @@
+<?php 
+    include 'conn.php';
+    $sql="select * from `student` ";
+    $result=mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result)>0){
+        while($row=mysqli_fetch_array($result)){
+            $id=$row['Stu_id'];
+            $name=$row['Name'];
+            $phone=$row['Phone'];
+            $city=$row['City'];
+            $email=$row['email'];
+            $pass=$row['password'];
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,6 +47,7 @@
         <link rel="stylesheet" href="css/owl.carousel.min.css">
         <link rel="stylesheet" href="css/owl.theme.default.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <style>
         body {
     background: rgb(190, 171, 196)
@@ -80,42 +97,48 @@
     </style>
     </head>
   <body>
-   <div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+      <div class="container rounded bg-white mt-5 mb-5">
+          <div class="row">
+              <div class="col-md-3 border-right">
+            <a href="Teachers_Home.php"><i class="fa-solid fa-arrow-left mt-4"></i></a>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><?php session_start(); echo $name;?></span><span class="text-black-50"><?php  echo $email; ?></span><span> </span></div>
         </div>
-        <div class="col-md-5 border-right">
+        <div class="col-md-7 ">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
+                <form action="Edit-action.php" method="post">
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                    <div class="col-md-6"><label class="labels">Name</label><input name="Name" type="text" class="form-control" placeholder="Username" value="<?php echo $name; ?>"></div>
+                    <div class="col-md-6"><label class="labels">Mobile Number</label><input class="form-control" name="Phone" placeholder="Enter phone number" value="<?php echo $phone; ?>"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
-                    <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
-                    <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
-                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
-                    <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div>
+                    <div class="col-md-6"><label class="labels">Country</label><input type="text" name="City" class="form-control" placeholder="Country" value="<?php echo $city; ?>"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                    <div class="col-md-12"><label class="labels">Email</label><input type="text" name="email" class="form-control" placeholder="Enter email" value="<?php echo $email; ?>"></div>
                 </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Password</label><input type="text" name="password" class="form-control" placeholder="Enter password" value="<?php echo $pass; ?>"></div>
+                </div>
+                <input type="hidden" name="Stu_id" value="<?php echo $id;?>">
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+            </div>
+</form>
+            <div class="mt-5 text-center">
+                <button class="btn btn-danger" onclick="location.href='logout.php'">Logout</button>
+            </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
                 <div class="col-md-12"><label class="labels">Experience in teaching</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
                 <div class="col-md-12"><label class="labels">bio</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 </div>
 </div>

@@ -33,7 +33,7 @@
 
                 }else{
 
-                    $sql = "SELECT * FROM teacher WHERE email='$email' AND password='$pass'";
+                    $sql = "SELECT * FROM student WHERE email='$email' AND password='$pass'";
                     $conn = mysqli_connect($this->servername,$this->username, $this->password,$this->db_name);
                     $result = mysqli_query($conn, $sql);
 
@@ -43,23 +43,29 @@
 
                         if ($row['email'] === $email && $row['password'] === $pass) {
                             
+                            $_SESSION['Stu_id'] = $row['Stu_id'];
+
                             $_SESSION['Name'] = $row['Name'];
+
+                            $_SESSION['Phone'] = $row['Phone'];
+
+                            $_SESSION['City'] = $row['City'];
 
                             $_SESSION['email'] = $row['email'];
 
                             $_SESSION['password'] = $row['password'];
 
-                            header("Location: home.php");
+                            header("Location: Teachers_Home.php");
                             
                         }else{
 
-                            header("Location: signin_page.php?error=Incorect Username or password");
+                            header("Location: signin__page.php?error=Incorect Username or password");
 
                         }
 
                     }else{
 
-                        header("Location:signin_page.php?error=Incorect User name or password");
+                        header("Location:signin__page.php?error=Incorect User name or password");
 
                     }
 

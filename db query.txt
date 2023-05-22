@@ -1,0 +1,79 @@
+CREATE DATABASE teacheron;
+
+CREATE TABLE `admin` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `name` varchar(50) NOT NULL,
+ `email` varchar(50) NOT NULL,
+ `password` varchar(50) NOT NULL,
+ PRIMARY KEY (`id`)
+);
+course	CREATE TABLE `course` (
+ `Course_id` int(50) NOT NULL,
+ `Course` varchar(255) DEFAULT NULL,
+ `Price` varchar(255) DEFAULT NULL,
+ PRIMARY KEY (`Course_id`)
+);
+
+INSERT INTO `course` (`Course_id`, `Course`, `Price`) VALUES
+(1, 'Arabic', '10$'),
+(2, 'English', '15$'),
+(3, 'Philosophy', '20$'),
+(4, 'Psychology', '20$'),
+(5, 'History', '10$'),
+(6, 'Geographically', '10$'),
+(7, 'Chemistry', '25$'),
+(8, 'Revived', '20$'),
+(9, 'French', '30$'),
+(10, 'Physics', '35$'),
+(11, 'Math\'s', '10$'),
+(12, 'Chiology', '15$'),
+(13, 'Static', '20$'),
+(14, 'German', '30$'),
+(15, 'Statistics', '30$');
+
+CREATE TABLE `payments` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `card_num` int(255) NOT NULL,
+ `name_card` varchar(20) NOT NULL,
+ `teacher_name` varchar(50) NOT NULL,
+ `student_name` varchar(50) NOT NULL,
+ PRIMARY KEY (`id`)
+);
+CREATE TABLE `student` (
+ `Stu_id` int(11) NOT NULL AUTO_INCREMENT,
+ `Name` varchar(255) DEFAULT NULL,
+ `Phone` varchar(255) DEFAULT NULL,
+ `age` int(50) NOT NULL,
+ `City` varchar(255) DEFAULT NULL,
+ `email` varchar(255) NOT NULL,
+ `password` varchar(255) NOT NULL,
+ PRIMARY KEY (`Stu_id`)
+);
+
+INSERT INTO `student` (`Stu_id`, `Name`, `Phone`, `City`, `email`, `password`) VALUES
+(1, 'Mohamed Ahmed', '011426346476', 'Cairo', 'MohamedAhmed@gmail.com', '12345'),
+(2, 'Mohamed Salah ', '01010202637', 'Cairo', 'MohamedSalah@gmail.com', '12345'),
+(3, 'Mohamed Sameh', '01274661294', 'Qina', 'MohamedSameh@gmail.com', '12345'),
+(4, 'Mena Ahmed', '01111353335', 'Cairo', 'ahmedmohamed@gmail.com', '12345');
+
+CREATE TABLE `st_co` (
+ `Stu_id` int(11) NOT NULL,
+ `Course_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+CREATE TABLE `teacher` (
+ `Teach_id` int(11) NOT NULL AUTO_INCREMENT,
+ `img` blob NOT NULL,
+ `Name` varchar(255) DEFAULT NULL,
+ `Phone` varchar(255) DEFAULT NULL,
+ `Spaecialization` varchar(255) DEFAULT NULL,
+ `price` varchar(50) NOT NULL,
+ `email` varchar(255) DEFAULT NULL,
+ `password` varchar(255) NOT NULL,
+ PRIMARY KEY (`Teach_id`)
+);
+
+CREATE TABLE `tea_c` (
+ `Teach_id` int(11) NOT NULL,
+ `Course_id` int(11) NOT NULL
+);
