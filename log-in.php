@@ -19,17 +19,19 @@
 
                 }
 
+                
                 $email = validate($_POST['email']);
-
                 $pass = validate($_POST['password']);
 
-                if (empty($email)) {
 
-                    header("Location: signin_page.php?error=Email is required");
+                if (empty($_POST['email'])) {
+
+                    header("Location: signin__page.php?error=Email is required");
+                    $msg='<h1>sdsdfsdf</h1>';
 
                 }else if(empty($pass)){
 
-                    header("Location: signin_page.php?error=Password is required");
+                    header("Location: signin__page.php?error=Password is required");
 
                 }else{
 
@@ -73,7 +75,7 @@
 
             }else{
 
-                header("Location:signin_page.php");
+                header("Location:signin__page.php");
 
         }
     }

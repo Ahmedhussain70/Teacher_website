@@ -1,3 +1,6 @@
+<?php 
+include 'db.php';
+?>
 <!doctype html >
 
 <html lang="ar" lang="en">
@@ -136,7 +139,10 @@
                  <div class="col-12">
                     <div>
                         <input type="email" class="form-control w-100 mt-3" name="email" placeholder="Enter Your Email" id="mail" onkeyup="checkValidation()">
-                        <div class="alert alert-danger w-100 mt-3 d-none" id="emailAlert"><p> Emial not valid</p></div>
+                        <div class="alert alert-danger w-100 mt-3 d-none" id="emailAlert"><p> Email not valid</p></div>
+                        <?php If(isset($_POST['email']) && $_POST['email'] == ''){ ?>
+        <h3>Invalid username or password</h3>
+  <?php } ?>
                     </div>
                  
                    </div>
@@ -233,6 +239,6 @@
             </div>
 </section>
 <script src="js/bootstrap.bundle.min.js"></script>
-   <script src="./../main.js"></script>
+   <script src="main.js"></script>
  </body>
 </html>

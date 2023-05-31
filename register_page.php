@@ -165,7 +165,7 @@ style="--button-main-color: #1273EB;
           
           <div class="col-12 text-center">
             <p>
-              Already have an account? <a href="signin_page.php">Sign in.</a></p>
+              Already have an account? <a href="signin__page.php">Sign in.</a></p>
           </div>
          
 

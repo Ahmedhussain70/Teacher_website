@@ -42,9 +42,9 @@
     <body>
         <!--start of header-->
       <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light z-1" id="nav">
+        <nav class="navbar navbar-expand-lg  z-1" id="nav">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"><img src="./images/logo.jpg" style=" border-radius: 50%;" alt="" class="w-50"></a>
+              <a class="navbar-brand" href="Teachers_Home.php"><img src="./images/logo.jpg" style=" border-radius: 50%;" alt="" class="w-50"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -99,8 +99,10 @@
         <div class="col-12 col-md-6 col-lg-6 mb-5">
         <!-- <div class="row"> -->
                 <div class="package-item">
-                        <div class="overflow-hidden">
-                                <?php echo '<img class="img-fluid" src="data:image;base64,'.base64_encode($row['img']).'">' ?>
+                        <div>
+                                <?php echo '<img src="data:image;base64,'.base64_encode($row['img']).'" style="
+    width: 1000px;
+">' ?>
                         </div>
                         <div class="d-flex border-bottom">
                             <small class="flex-fill text-center border-end py-2"><?php echo $row['Spaecialization'] ?></small>
