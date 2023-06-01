@@ -65,7 +65,21 @@
               <?php endif; ?>
                 </ul>
             </div>
-            <input class="form-control " id="search" name="search"  placeholder="Search" >
+            <!-- <input class="form-control " id="search" name="search"  placeholder="Search" ><i class="fa fa-search home_search_for-i"></i> -->
+            <section class="home-sec">
+        <div class="form-group">
+          <input
+            placeholder="Search for Book, Author or Category"
+            type="text"
+            class="form-control input-lg home_search_for"
+            name="search_for"
+            id="search"
+            autocomplete="off"
+          />
+<i class="fa fa-search home_search_for-i"></i>
+        </div>
+      </div>
+    </section>
             <li class="nav-item username ms-5"><?php  if (isset($_SESSION['Name']) && $_SESSION['Name']): ?>
                                         <a href="profile.php" class="nav-link username"><?php echo($_SESSION['Name']); ?></a>
                                     </li>
