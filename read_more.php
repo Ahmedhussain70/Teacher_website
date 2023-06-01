@@ -44,7 +44,7 @@ include 'auth.php';
 </head>
 <body>
 <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light z-1" id="nav">
+        <nav class="navbar navbar-expand-lg  z-1" id="nav">
             <div class="container-fluid">
               <a class="navbar-brand" href="#"><img src="./images/logo.jpg" style=" border-radius: 50%;" alt="" class="w-50"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,21 @@ include 'auth.php';
               <?php endif; ?>
                 </ul>
             </div>
-            <input class="form-control " id="search" name="search"  placeholder="Search" >
+            <section class="home-sec">
+        <div class="form-group">
+          <input
+            placeholder="Search for Teachers"
+            type="text"
+            class="form-control input-lg home_search_for"
+            name="search_for"
+            id="search"
+            autocomplete="off"
+          />
+<i class="fa fa-search home_search_for-i"></i>
+        </div>
+      </div>
+    </section>
+            <!-- <input class="form-control " id="search" name="search"  placeholder="Search" > -->
             <li class="nav-item username ms-5"><?php  if (isset($_SESSION['Name']) && $_SESSION['Name']): ?> 
                                         <a href="profile.php" class="nav-link username"><?php echo($_SESSION['Name']); ?></a>
                                     </li>

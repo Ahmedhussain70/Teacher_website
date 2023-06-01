@@ -149,18 +149,7 @@ body {
     margin-bottom: 24px;
 }
 
-.form-control {
-    width: 100%;
-    height: 45px;
-    font-size: 14px;
-    border: 1px solid #DADCE0;
-    border-radius: 0;
-    outline: none;
-    padding: 2px;
-    background: none;
-    z-index: 1;
-    box-shadow: none;
-}
+
 
 .form__label {
     position: absolute;
@@ -198,7 +187,7 @@ body {
     </head>
 <body>
 <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light z-1" id="nav">
+        <nav class="navbar navbar-expand-lg z-1" id="nav">
             <div class="container-fluid">
               <a class="navbar-brand" href="#"><img src="./images/logo.jpg" style=" border-radius: 50%;" alt="" class="w-50"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -221,7 +210,21 @@ body {
               <?php endif; ?>
                 </ul>
             </div>
-            <input class="form-control " id="search" name="search"  placeholder="Search" >
+            <!-- <input class="form-control " id="search" name="search"  placeholder="Search" > -->
+            <section class="home-sec">
+        <div class="form-group">
+          <input
+            placeholder="Search for Teachers"
+            type="text"
+            class="form-control input-lg home_search_for"
+            name="search_for"
+            id="search"
+            autocomplete="off"
+          />
+<i class="fa fa-search home_search_for-i"></i>
+        </div>
+      </div>
+    </section>
             <li class="nav-item username ms-5"><?php if (isset($_SESSION['Name']) && $_SESSION['Name']): ?>
                                         <a href="profile.php" class="nav-link username"><?php echo($_SESSION['Name']); ?></a>
                                     </li>
@@ -357,7 +360,7 @@ body {
                                                 <div class="form__div">
                                                     <!-- <input type="text" name="name_card" class="form-control" placeholder=" "> -->
                                                     <!-- <label for=""  class="form__label">dsad</label> -->
-                                                    <select name="name_card" required class="form-control">
+                                                    <select name="name_card" required class="form-control" style="width: 43vw;">
                                                     <option name="name_card">Card Type</option>    
                                                     <option name="name_card">Visa</option>
                                                     <option name="name_card">Mastercard</option>

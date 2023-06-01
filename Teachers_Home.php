@@ -69,7 +69,7 @@
             <section class="home-sec">
         <div class="form-group">
           <input
-            placeholder="Search for Book, Author or Category"
+            placeholder="Search for Teachers"
             type="text"
             class="form-control input-lg home_search_for"
             name="search_for"
