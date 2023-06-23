@@ -1,17 +1,6 @@
 <?php 
     include 'conn.php';
-    $sql="select * from `student` ";
-    $result=mysqli_query($conn,$sql);
-    if(mysqli_num_rows($result)>0){
-        while($row=mysqli_fetch_array($result)){
-            $id=$row['Stu_id'];
-            $name=$row['Name'];
-            $phone=$row['Phone'];
-            $city=$row['City'];
-            $email=$row['email'];
-            $pass=$row['password'];
-        }
-    }
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +90,7 @@
           <div class="row">
               <div class="col-md-3 border-right">
             <a href="Teachers_Home.php"><i class="fa-solid fa-arrow-left mt-4"></i></a>
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><?php session_start(); echo $name;?></span><span class="text-black-50"><?php  echo $email; ?></span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><?php echo $_SESSION['Name'];?></span><span class="text-black-50"><?php  echo $_SESSION['email']; ?></span><span> </span></div>
         </div>
         <div class="col-md-7 ">
             <div class="p-3 py-5">
@@ -110,19 +99,19 @@
                 </div>
                 <form action="Edit-action.php" method="post">
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input name="Name" type="text" class="form-control" placeholder="Username" value="<?php echo $name; ?>"></div>
-                    <div class="col-md-6"><label class="labels">Mobile Number</label><input class="form-control" name="Phone" placeholder="Enter phone number" value="<?php echo $phone; ?>"></div>
+                    <div class="col-md-6"><label class="labels">Name</label><input name="Name" type="text" class="form-control" placeholder="Username" value="<?php echo $_SESSION['Name']; ?>"></div>
+                    <div class="col-md-6"><label class="labels">Mobile Number</label><input class="form-control" name="Phone" placeholder="Enter phone number" value="<?php echo $_SESSION['Phone']; ?>"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Country</label><input type="text" name="City" class="form-control" placeholder="Country" value="<?php echo $city; ?>"></div>
+                    <div class="col-md-6"><label class="labels">Country</label><input type="text" name="City" class="form-control" placeholder="Country" value="<?php echo $_SESSION['City']; ?>"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Email</label><input type="text" name="email" class="form-control" placeholder="Enter email" value="<?php echo $email; ?>"></div>
+                    <div class="col-md-12"><label class="labels">Email</label><input type="text" name="email" class="form-control" placeholder="Enter email" value="<?php echo $_SESSION['email'] ?>"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Password</label><input type="text" name="password" class="form-control" placeholder="Enter password" value="<?php echo $pass; ?>"></div>
+                    <div class="col-md-12"><label class="labels">Password</label><input type="text" name="password" class="form-control" placeholder="Enter password" value="<?php echo $_SESSION['password']; ?>"></div>
                 </div>
-                <input type="hidden" name="Stu_id" value="<?php echo $id;?>">
+                <input type="hidden" name="Stu_id" value="<?php echo $_SESSIONS['id'];?>">
                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button>
             </div>
 </form>
