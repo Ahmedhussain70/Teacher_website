@@ -19,44 +19,17 @@
             --link-color: #1273EB;
             font-family: Proxima Nova,sans-serif;
             margin: 0;
+            margin-top:20px;
+            margin-bottom:20px;
+            margin-left:40px;
+            margin-right:40px;
             padding: 0;
             box-sizing: inherit;
             color: #374957;
-            height: 100vh;
+            height: 118vh;
             display: flex;
             box-shadow: 0 0 30px #3749574d;">
-    <div class="gallery"  style=" --button-main-color: #1273EB;
-    --checkbox-active-color: #1273EB;
-    --checkbox-border-hover-color: #1273EB;
-    --link-color: #1273EB;
-    font-family: Proxima Nova,sans-serif;
-    color: #374957;
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    background-color: #f8fafb;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    width: 70%;">
-<img src="images/13146648_Students watching webinar on computer.jpg" 
-style="--button-main-color: #1273EB;
-      --checkbox-active-color: #1273EB;
-      --checkbox-border-hover-color: #1273EB;
-      --link-color: #1273EB;
-      font-family: Proxima Nova,sans-serif;
-      color: #374957;
-      margin-left:200px ;
-      padding: 0;
-      box-sizing: inherit;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none;">
-</div>
+    
         
   <div class="maincont" style="    --button-main-color: #1273EB;
   --checkbox-active-color: #1273EB;
@@ -170,7 +143,7 @@ style="--button-main-color: #1273EB;
          
 
           <div>
-            <button type="button" onclick="location.href='Teachers_Home.php'" class="cancelbtn"  style="
+            <button type="button" onclick="location.href='Teachers_Home.php'" class="cancelbtn login"  style="
             -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     box-sizing: border-box;
@@ -195,11 +168,11 @@ style="--button-main-color: #1273EB;
     padding: 10px 20px;
     min-width: 220px;
     opacity:0.5;
-    margin-left: 400px;
+    margin-left: 500px !important;
     margin-top: 2px;
     font-weight: 1000;
     font-size: 14px;"">Cancel</button>
-            <button type="submit" class="signupbtn" style=" 
+            <button type="submit" class="signupbtn login" style=" 
             -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     box-sizing: border-box;
@@ -225,7 +198,7 @@ style="--button-main-color: #1273EB;
     opacity:0.5;
     
     font-weight: 1000;
-    margin-left: 400px;
+    margin-left: 500px !important;
     margin-top: 30px;
     font-size: 14px;"> Sign Up </button>
 

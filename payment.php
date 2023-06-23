@@ -361,7 +361,7 @@ body {
                                                     <!-- <input type="text" name="name_card" class="form-control" placeholder=" "> -->
                                                     <!-- <label for=""  class="form__label">dsad</label> -->
                                                     <select name="name_card" required class="form-control" style="width: 43vw;">
-                                                    <option name="name_card">Card Type</option>    
+                                                    <option name="name_card">Card Type</option>
                                                     <option name="name_card">Visa</option>
                                                     <option name="name_card">Mastercard</option>
                                                     <option name="name_card">Discover</option>

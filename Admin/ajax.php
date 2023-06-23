@@ -41,6 +41,7 @@ if (isset($_POST['search'])) {
    <a>
        <?php echo $Result['password']; ?>
    </td></a>
+
    <td><a class="btn btn-danger  mt-2"  href="delete-action.php?Stu_id=<?php echo $row[0];?>"> Delete</a>
          <a class="btn btn-warning  mt-2" href="Edit.php?Stu_id=<?php echo $row[0];?>"> Edit</a>
    </td>

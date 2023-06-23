@@ -2,7 +2,7 @@
 
 include_once 'conn.php';
 
-$sql='update student set Name ="'.$_POST['Name'].'",Phone="'.$_POST['Phone'].'",City="'.$_POST['City'].'",email="'.$_POST['email'].'"where Stu_id='.$_POST['Stu_id'];
+$sql='update student set Name ="'.$_POST['Name'].'",Phone="'.$_POST['Phone'].'",City="'.$_POST['City'].'",email="'.$_POST['email'].'",password="'.$_POST['password'].'"where Stu_id='.$_POST['Stu_id'];
 
 if(mysqli_query($conn,$sql)){
     header("Location: profile.php");

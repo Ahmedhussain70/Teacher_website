@@ -82,7 +82,10 @@ include 'db.php';
                 border-radius: 30px;
                 background: #fff;
                 padding: 80px;
-                
+                margin-top:20px;
+            margin-bottom:20px;
+            margin-left:40px;
+            margin-right:40px;
                 
                 box-shadow: 0 0 15px 7px #9e9e9e59;">
                 <div .logo style="

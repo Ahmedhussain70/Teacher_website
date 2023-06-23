@@ -27,7 +27,6 @@
                 if (empty($_POST['email'])) {
 
                     header("Location: signin__page.php?error=Email is required");
-                    $msg='<h1>sdsdfsdf</h1>';
 
                 }else if(empty($pass)){
 
